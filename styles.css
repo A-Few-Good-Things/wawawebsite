@@ -3540,7 +3540,7 @@ html {
   .section-5 {
     background-color: #ebfeff;
     height: 600px;
-    margin-bottom: 90%;
+    margin-bottom: 100%;
     position: relative;
   }
   
@@ -3694,7 +3694,7 @@ html {
   }
   
   .slide-5 {
-    background-image: url("https://cdn.prod.website-files.com/66bbc0afdda4de4c84e7a39a/66c09de330125423df059ac1_pexels-olly-3771060.jpg");
+    background-image: url("phone_image.jpeg");
     background-position: 0 0;
     background-size: cover;
     height: 600px;

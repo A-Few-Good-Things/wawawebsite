@@ -43,7 +43,23 @@ function saveInstructorData() {
   addDoc(collection(db, 'instructors'), formData)
   .then(function() {
       alert('Instructors data saved successfully!');
-      //sendEmail(formData); // Call to send email
+      const emailParams = {
+        to_name: preferredName,
+        to_email: email,
+        message: `We’re excited to welcome you to WAWA, a new frontier for skilled-activity holidays, where passionate instructors like you can share your expertise with eager travellers from around the world.
+As we prepare for our official launch, we’re thrilled to have you as one of our founding instructors. Your skills and knowledge are key to creating memorable and enriching experiences for our travellers, and we’re committed to providing you with a platform that helps you reach a global audience.
+In the coming weeks, you’ll receive exclusive updates and early access to our platform features, designed to make your experience smooth and rewarding. From managing your bookings to connecting with enthusiastic learners, WAWA is here to support your journey as an instructor.
+Thank you for joining us at this exciting stage. Together, we’ll inspire and empower travellers to learn, explore, and grow through the experiences you offer.
+Looking forward to an adventurous journey ahead!`
+      };
+
+      emailjs.send("service_0ef586f","template_hgj7dmq", emailParams)
+        .then(function(response) {
+            console.log('Email sent successfully!', response.status, response.text);
+        }, function(error) {
+            console.log('Failed to send email. Error:', error);
+        });
+      
   })
   .catch(function(error) {
       alert('Failed to save data. ' + error.message);
@@ -74,7 +90,23 @@ function saveTravellerData() {
   addDoc(collection(db, 'travellers'), formData)
   .then(function() {
       alert('Travellers data saved successfully!');
-      //sendEmail(formData); // Call to send email
+      const emailParams = {
+        to_name: preferredName,
+        to_email: email,
+        message: `Welcome to your next holiday!
+Thank you for joining our community of adventure seekers! We're thrilled to have you on board as we prepare to launch WAWA, your ultimate gateway to unforgettable skilled-activity holidays.
+Whether you're an adrenaline junkie or someone looking to try new skills while exploring breathtaking destinations, we've crafted a platform that caters to your passions. From surfing the world's best waves to mastering culinary arts in exotic locations, WAWA offers a diverse range of experiences tailored to your interests.
+Stay tuned for exclusive updates, early access to bookings, and special pre-launch offers just for our founding members like you. We're putting the finishing touches on our platform to ensure a seamless and exciting experience.
+Thank you for being part of this journey with us. We can't wait to help you discover your next adventure!`
+      };
+
+      emailjs.send("service_0ef586f","template_hgj7dmq", emailParams)
+        .then(function(response) {
+            console.log('Email sent successfully!', response.status, response.text);
+        }, function(error) {
+            console.log('Failed to send email. Error:', error);
+        });
+      
   })
   .catch(function(error) {
       alert('Failed to save traveller data. ' + error.message);

@@ -215,6 +215,7 @@
         <button href="#" class="app-store"></button>
         <button href="#" class="play-store"></button>
         <div class="text-block-7">Instructors, for your next holiday on us, do leave us your contact. We want to help you see the world!</div>
+        
         <div class="form-block w-form">
           <form
             id="instructor_email-form"
@@ -290,6 +291,16 @@
             ></textarea>
             <button type="submit" class="button-8 w-button">Submit</button>
           </form>
+          <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "3ifSjQB6zU_I-n61d",
+      });
+   })();
+</script>
           
           <div class="success-message big w-form-done">
             <h2>Thank you for your submission!</h2>
